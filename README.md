@@ -1,4 +1,4 @@
-# pact-publish-oas-action
+# pact-create-tag-action
 
 Publishes OAS and test evidence to a Pactflow server for 'bi-directional' testing (relies on [actions/checkout](https://github.com/marketplace/actions/checkout) being called first).
 
@@ -8,18 +8,15 @@ Publishes OAS and test evidence to a Pactflow server for 'bi-directional' testin
 env:
   version: "1.2.3"
   participant_name: "my-api-provider"
-  PACT_BROKER: ${{ secrets.PACT_BROKER }}
-  PACT_BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
+  pact_broker: ${{ secrets.PACT_BROKER }}
 
 jobs:
-  pact-publish-oas-action:
+  pact-create-tag:
+    runs-on: ubuntu-latest
     steps:
-      # MANDATORY: Must use 'checkout' first
-      - uses: actions/checkout@v2
-      - uses: roycdiscovery/pact-publish-oas-action@v1.0
+      - uses: roycdiscovery/pact-create-tag-action@v1.0
         env:
-          oas_file: src/oas/user.yml
-          results_file: src/results/report.md
+          tag: prod
 ```
 
 ## Notes
