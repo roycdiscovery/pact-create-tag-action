@@ -1,0 +1,20 @@
+name: "pact-create-tag-action"
+description: "Creates a tag on the specified version"
+branding:
+  icon: "bookmark"
+  color: "green"
+inputs:
+  participant_name:
+    description: "The name of your participant (usually project name)"
+    required: true
+  version:
+    description: "Version to publish"
+    required: true
+  tag:
+    description: "Tag to create"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/publishOAS.sh
+      shell: bash
