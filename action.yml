@@ -16,5 +16,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/publishOAS.sh
+    - run: ${{ github.action_path }}/createTag.sh
       shell: bash
