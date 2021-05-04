@@ -14,7 +14,7 @@ inputs:
     description: "The name of your participant (usually project name)"
     required: true
   version:
-    description: "Version to publish"
+    description: "Version to tag"
     required: true
   tag:
     description: "Tag to create"
