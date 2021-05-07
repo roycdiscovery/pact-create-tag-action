@@ -7,7 +7,7 @@ Creates a tag on this version.
 # (This just saves defining these multiple times for different pact jobs)
 env:
   version: "1.2.3"
-  participant_name: "my-api-provider"
+  application_name: "my-api-provider"
   pact_broker: ${{ secrets.PACT_BROKER }}
 
 jobs:
